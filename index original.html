@@ -1,0 +1,159 @@
+<!doctype html> 
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>freeteens</title>
+    <link href="trafors.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        #Html1, #Html3, #wb_Text1, #wb_Text2 {
+            text-align: center;
+            margin-bottom: 20px; /* Отступ между элементами */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 80%;
+            max-width: 300px;
+        }
+
+        /* Стили для видео */
+        .video-container {
+            margin-top: 120px; /* Отступ сверху для видео на маленьких экранах */
+            position: relative;
+            text-align: center;
+        }
+
+        .video-container video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            color: yellow;
+            font-weight: bold;
+            font-size: 24px;
+            pointer-events: none; /* Не мешает кликам на видео */
+        }
+
+        #link-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff0;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #000;
+            border-radius: 5px;
+            max-width: 200px;
+        }
+
+        #link-button:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        /* Медиазапросы */
+        @media (max-width: 768px) {
+            #container {
+                padding: 10px;
+            }
+
+            .video-container {
+                margin-top: 60px;
+            }
+
+            #Html1, #Html3, #wb_Text1, #wb_Text2 {
+                margin-bottom: 10px;
+            }
+
+            button {
+                font-size: 14px;
+                width: 90%;
+            }
+
+            .video-overlay {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #container {
+                padding: 5px;
+            }
+
+            .video-container {
+                margin-top: 30px;
+            }
+
+            #Html1, #Html3, #wb_Text1, #wb_Text2 {
+                margin-bottom: 5px;
+            }
+
+            button {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+
+            .video-overlay {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <!-- Видео -->
+    <div id="Html4">
+        <div class="video-container">
+            <!-- Текст над видео -->
+            <div class="video-overlay">Adult Social Network</div>
+            <video controls>
+                <source src="videos/Xvideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Кнопка под видео -->
+            <a id="link-button" href="https://www1.affhone.fyi/click?pid=3749&offer_id=932&l=1732832271" target="_blank">
+                Join Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Остальной контент -->
+    <!-- ... Остальная часть вашего кода остается без изменений ... -->
+</div>
+</body>
+</html>
