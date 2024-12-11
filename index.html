@@ -53,11 +53,40 @@
         }
 
         .sub-heading {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            color: #ff4500;
-            text-shadow: 1px 1px 10px #000;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .info-text {
+            font-size: 18px;
+            color: #ccc;
+            margin: 15px 0;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
+
+        .steps {
             margin: 20px 0;
+            text-align: left;
+            font-size: 16px;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        .steps span.number {
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size: 18px;
         }
 
         #cta-button {
@@ -79,6 +108,50 @@
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
         }
+
+        /* Стиль для генератора пароля */
+        .password-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .password-container input {
+            padding: 12px;
+            font-size: 18px;
+            width: 80%;
+            max-width: 400px;
+            background-color: #333;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .password-container button {
+            padding: 15px 40px; /* Установим такие же размеры кнопок, как у основной */
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background: linear-gradient(45deg, #ff4500, #ff6347); /* Та же градиентная заливка */
+            text-transform: uppercase;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .password-container button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8); /* Эффект наведения */
+        }
+
+        .notification {
+            display: none;
+            color: #28a745;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -93,90 +166,187 @@
             </video>
         </div>
 
-        <div class="image-heading" data-translate="image-heading">НОВАЯ СОЦИАЛЬНАЯ СЕТЬ ДЛЯ ВЗРОСЛЫХ 18+</div>
+        <div class="image-heading" data-translate="image-heading">EXCLUSIVE 18+ ENTERTAINMENT PORTAL</div>
 
-        <!-- Изображение -->
+        <!-- Изображение ai_bot.png -->
         <div class="image-container">
             <img src="ai_bot.png" alt="AI Bot Preview" data-translate="ai-bot-alt">
         </div>
 
-        <!-- Добавленный текст -->
-        <div class="sub-heading" data-translate="simple-task">ПРОСТО ОТВЕТЬ НА ВОПРОСЫ!</div>
+        <div class="sub-heading" data-translate="sub-heading">With private section XVideos 380000+ HD Video</div>
+
+        <!-- Изображение ai_botfull.png -->
+        <div class="image-container">
+            <img src="ai_botfull.png" alt="Full AI Bot Image" data-translate="ai-botfull-alt">
+        </div>
+
+        <div class="info-text" data-translate="info-text">Unlock the XVideos section in 3 easy steps using your password:</div>
+        
+        <!-- Генератор пароля теперь здесь -->
+        <div class="password-container">
+            <input type="text" id="password" readonly placeholder="Generated Password will appear here" data-translate="password-placeholder">
+            <br>
+            <button onclick="generatePassword()" data-translate="generate-password">GET ACCESS PASSWORD</button>
+            <button onclick="copyPassword()" data-translate="copy-password">Copy Password</button>
+            <div class="notification" id="notification" data-translate="password-copied">Password copied!</div>
+        </div>
+
+        <div class="steps">
+            <p><span class="number" data-translate="step1-number">1.</span> <span data-translate="step1">Click “Create Account” and while holding down the password entry box, paste the copied password.</span></p>
+            <!-- Генератор пароля теперь между шагами 1 и 2 -->
+            <p><span class="number" data-translate="step2-number">2.</span> <span data-translate="step2">Simple registration with no email confirmation required.</span></p>
+            <p><span class="number" data-translate="step3-number">3.</span> <span data-translate="step3">Unlimited access to exclusive adult content in the private XVideos section is open!</span></p>
+        </div>
 
         <!-- Кнопка -->
         <a id="cta-button" href="https://www1.affhone.fyi/click?pid=3749&offer_id=924&l=1732831013" 
            target="_blank" rel="noopener noreferrer" data-translate="cta-button">Unlock XVideos Content Now for Free</a>
     </div>
 
-    <script>
-        const translations = {
-            en: {
-                heading: "Get Instant Access to XVideos Content!",
-                "video-alt": "Your browser does not support the video tag.",
-                "image-heading": "NEW SOCIAL NETWORK FOR ADULTS 18+",
-                "simple-task": "JUST ANSWER THE QUESTIONS!",
-                "cta-button": "Unlock XVideos Content Now for Free",
-                "ai-bot-alt": "AI Bot Preview"
-            },
-            ru: {
-                heading: "Получите мгновенный доступ к контенту XVideos!",
-                "video-alt": "Ваш браузер не поддерживает видео.",
-                "image-heading": "НОВАЯ СОЦИАЛЬНАЯ СЕТЬ ДЛЯ ВЗРОСЛЫХ 18+",
-                "simple-task": "ПРОСТО ОТВЕТЬ НА ВОПРОСЫ!",
-                "cta-button": "Разблокировать контент XVideos бесплатно",
-                "ai-bot-alt": "Превью AI бота"
-            },
-            de: {
-                heading: "Erhalten Sie sofortigen Zugang zu XVideos-Inhalten!",
-                "video-alt": "Ihr Browser unterstützt das Video-Tag nicht.",
-                "image-heading": "NEUES SOZIALES NETZWERK FÜR ERWACHSENE 18+",
-                "simple-task": "BEANTWORTE EINFACH DIE FRAGEN!",
-                "cta-button": "XVideos-Inhalte kostenlos freischalten",
-                "ai-bot-alt": "AI-Bot-Vorschau"
-            },
-            fr: {
-                heading: "Obtenez un accès instantané au contenu XVideos !",
-                "video-alt": "Votre navigateur ne prend pas en charge la vidéo.",
-                "image-heading": "NOUVEAU RÉSEAU SOCIAL POUR ADULTES 18+",
-                "simple-task": "RÉPONDEZ SIMPLEMENT AUX QUESTIONS !",
-                "cta-button": "Débloquez le contenu XVideos gratuitement",
-                "ai-bot-alt": "Aperçu du bot AI"
-            },
-            it: {
-                heading: "Ottieni accesso immediato ai contenuti XVideos!",
-                "video-alt": "Il tuo browser non supporta il tag video.",
-                "image-heading": "NUOVO SOCIAL NETWORK PER ADULTI 18+",
-                "simple-task": "RISPONDI SEMPLICEMENTE ALLE DOMANDE!",
-                "cta-button": "Sblocca contenuti XVideos gratuitamente",
-                "ai-bot-alt": "Anteprima del bot AI"
-            },
-            es: {
-                heading: "¡Obtén acceso instantáneo al contenido de XVideos!",
-                "video-alt": "Tu navegador no admite la etiqueta de video.",
-                "image-heading": "NUEVA RED SOCIAL PARA ADULTOS 18+",
-                "simple-task": "¡SOLO RESPONDE LAS PREGUNTAS!",
-                "cta-button": "Desbloquear contenido de XVideos gratis",
-                "ai-bot-alt": "Vista previa del bot AI"
+<script>
+    const translations = {
+        "en": {
+            "heading": "Get Instant Access to XVideos Content!",
+            "video-alt": "Your browser does not support the video tag.",
+            "image-heading": "EXCLUSIVE 18+ ENTERTAINMENT PORTAL",
+            "ai-bot-alt": "AI Bot Preview",
+            "ai-botfull-alt": "Full AI Bot Image",
+            "sub-heading": "With private section XVideos 380000+ HD Video",
+            "info-text": "Unlock the XVideos section in 3 easy steps using your password:",
+            "step1": "Click “Create Account” and while holding down the password entry box, paste the copied password.",
+            "step2": "Simple registration with no email confirmation required.",
+            "step3": "Unlimited access to exclusive adult content in the private XVideos section is open!",
+            "cta-button": "Unlock XVideos Content Now for Free",
+            "password-placeholder": "Generated Password will appear here",
+            "generate-password": "GET ACCESS PASSWORD",
+            "copy-password": "Copy Password",
+            "password-copied": "Password copied!"
+        },
+        "ru": {
+            "heading": "Получите мгновенный доступ к контенту XVideos!",
+            "video-alt": "Ваш браузер не поддерживает видеотег.",
+            "image-heading": "ЭКСКЛЮЗИВНЫЙ ПОРТАЛ ДЛЯ ВЗРОСЛЫХ 18+",
+            "ai-bot-alt": "Предпросмотр AI-бота",
+            "ai-botfull-alt": "Полное изображение AI-бота",
+            "sub-heading": "В разделе XVideos: более 380000 HD видео",
+            "info-text": "Разблокируйте раздел XVideos в 3 простых шага с вашим паролем:",
+            "step1": "Нажмите 'Создать аккаунт' и при удержании поля ввода пароля вставьте скопированный пароль.",
+            "step2": "Простая регистрация без подтверждения электронной почты.",
+            "step3": "Неограниченный доступ к эксклюзивному контенту для взрослых открыт!",
+            "cta-button": "Разблокировать контент XVideos бесплатно",
+            "password-placeholder": "Сгенерированный пароль появится здесь",
+            "generate-password": "ПОЛУЧИТЕ ПАРОЛЬ ДЛЯ ДОСТУПА",
+            "copy-password": "Скопировать пароль",
+            "password-copied": "Пароль скопирован!"
+        },
+        "fr": {
+            "heading": "Accédez instantanément au contenu XVideos !",
+            "video-alt": "Votre navigateur ne supporte pas la balise vidéo.",
+            "image-heading": "PORTAIL EXCLUSIF 18+ POUR ADULTES",
+            "ai-bot-alt": "Aperçu du bot IA",
+            "ai-botfull-alt": "Image complète du bot IA",
+            "sub-heading": "Avec la section privée XVideos: plus de 380000 vidéos HD",
+            "info-text": "Déverrouillez la section XVideos en 3 étapes simples avec votre mot de passe :",
+            "step1": "Cliquez sur 'Créer un compte' et, en maintenant le champ de saisie du mot de passe, collez le mot de passe copié.",
+            "step2": "Inscription simple sans confirmation par e-mail.",
+            "step3": "Accès illimité au contenu adulte exclusif de la section privée XVideos !",
+            "cta-button": "Déverrouiller le contenu XVideos gratuitement",
+            "password-placeholder": "Le mot de passe généré apparaîtra ici",
+            "generate-password": "OBTENIR LE MOT DE PASSE D'ACCÈS",
+            "copy-password": "Copier le mot de passe",
+            "password-copied": "Mot de passe copié!"
+        },
+        "de": {
+            "heading": "Erhalten Sie sofortigen Zugang zum XVideos-Inhalt!",
+            "video-alt": "Ihr Browser unterstützt das Video-Tag nicht.",
+            "image-heading": "EXKLUSIVES 18+ ENTERTAINMENT-PORTAL",
+            "ai-bot-alt": "AI Bot Vorschau",
+            "ai-botfull-alt": "Vollständiges AI Bot Bild",
+            "sub-heading": "Mit dem privaten XVideos-Bereich: Über 380000 HD-Videos",
+            "info-text": "Schalten Sie den XVideos-Bereich in 3 einfachen Schritten mit Ihrem Passwort frei:",
+            "step1": "Klicken Sie auf 'Konto erstellen' und fügen Sie das kopierte Passwort im Passwort-Eingabefeld ein.",
+            "step2": "Einfache Registrierung ohne Bestätigung per E-Mail.",
+            "step3": "Unbegrenzter Zugriff auf exklusiven Erwachsenen-Content im privaten XVideos-Bereich!",
+            "cta-button": "Entsperren Sie XVideos-Inhalte jetzt kostenlos",
+            "password-placeholder": "Generiertes Passwort erscheint hier",
+            "generate-password": "PASSWORT ZUGRIFF ERHALTEN",
+            "copy-password": "Passwort kopieren",
+            "password-copied": "Passwort kopiert!"
+        },
+        "it": {
+            "heading": "Accedi istantaneamente al contenuto XVideos!",
+            "video-alt": "Il tuo browser non supporta il tag video.",
+            "image-heading": "PORTALE ESCLUSIVO 18+ PER ADULTI",
+            "ai-bot-alt": "Anteprima AI Bot",
+            "ai-botfull-alt": "Immagine completa AI Bot",
+            "sub-heading": "Con la sezione privata XVideos: oltre 380000 video HD",
+            "info-text": "Sblocca la sezione XVideos in 3 semplici passaggi con la tua password:",
+            "step1": "Clicca su 'Crea account' e, tenendo premuto il campo per la password, incolla la password copiata.",
+            "step2": "Registrazione semplice senza conferma via email.",
+            "step3": "Accesso illimitato al contenuto esclusivo per adulti nella sezione privata XVideos!",
+            "cta-button": "Sblocca subito i contenuti XVideos gratuitamente",
+            "password-placeholder": "La password generata apparirà qui",
+            "generate-password": "OTTENERE PASSWORD DI ACCESSO",
+            "copy-password": "Copia la password",
+            "password-copied": "Password copiata!"
+        },
+        "es": {
+            "heading": "¡Accede instantáneamente al contenido de XVideos!",
+            "video-alt": "Tu navegador no soporta la etiqueta de video.",
+            "image-heading": "PORTAL EXCLUSIVO 18+ PARA ADULTOS",
+            "ai-bot-alt": "Vista previa del bot de IA",
+            "ai-botfull-alt": "Imagen completa del bot de IA",
+            "sub-heading": "Con la sección privada XVideos: más de 380000 videos en HD",
+            "info-text": "Desbloquea la sección XVideos en 3 sencillos pasos con tu contraseña:",
+            "step1": "Haz clic en 'Crear cuenta' y mientras mantienes presionado el campo de la contraseña, pega la contraseña copiada.",
+            "step2": "Registro simple sin confirmación por correo electrónico.",
+            "step3": "¡Acceso ilimitado al contenido exclusivo para adultos en la sección privada de XVideos!",
+            "cta-button": "Desbloquea contenido de XVideos ahora gratis",
+            "password-placeholder": "La contraseña generada aparecerá aquí",
+            "generate-password": "OBTENER CONTRASEÑA DE ACCESO",
+            "copy-password": "Copiar contraseña",
+            "password-copied": "¡Contraseña copiada!"
+        }
+    };
+
+    function setLanguage(language) {
+        const elements = document.querySelectorAll("[data-translate]");
+        elements.forEach(el => {
+            const key = el.getAttribute("data-translate");
+            if (translations[language] && translations[language][key]) {
+                el.textContent = translations[language][key];
             }
-        };
+        });
+    }
 
-        function detectLanguage() {
-            const userLang = navigator.language || navigator.userLanguage;
-            return userLang.split('-')[0];
+    function detectBrowserLanguage() {
+        const browserLang = navigator.language || navigator.userLanguage;
+        const langCode = browserLang.split("-")[0];
+        const supportedLanguages = ["en", "ru", "fr", "de", "it", "es"];
+        return supportedLanguages.includes(langCode) ? langCode : "en";
+    }
+
+    const userLanguage = detectBrowserLanguage();
+    setLanguage(userLanguage);
+
+    function generatePassword() {
+        const length = Math.floor(Math.random() * (18 - 16 + 1)) + 16;
+        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+";
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            password += charset.charAt(Math.floor(Math.random() * charset.length));
         }
+        document.getElementById("password").value = password;
+    }
 
-        function translatePage(language) {
-            const elements = document.querySelectorAll("[data-translate]");
-            elements.forEach((element) => {
-                const key = element.getAttribute("data-translate");
-                if (translations[language] && translations[language][key]) {
-                    element.innerText = translations[language][key];
-                }
-            });
-        }
-
-        const language = detectLanguage();
-        translatePage(language in translations ? language : "en");
-    </script>
+    function copyPassword() {
+        const passwordInput = document.getElementById("password");
+        passwordInput.select();
+        document.execCommand("copy");
+        const notification = document.getElementById("notification");
+        notification.style.display = "block";
+        setTimeout(() => { notification.style.display = "none"; }, 2000);
+    }
+</script>
 </body>
 </html>
