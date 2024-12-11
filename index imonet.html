@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Video with Translation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            max-height: 500px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        #cta-button {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background: linear-gradient(45deg, #ff4500, #ff6347);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 69, 0, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            #cta-button {
+                padding: 10px 30px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video controls>
+            <source src="Xvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="button-container">
+        <a id="cta-button" href="https://avzqa.imitrkn.net/?utm_source=95373a9daf4cb6a2&s1=48854&s2=209775" target="_blank" rel="noopener noreferrer">
+            ПОЛУЧИТЬ БЕСПЛАТНЫЙ ДОСТУП СЕЙЧАС!
+        </a>
+    </div>
+</body>
+
+    <script>
+        const translations = {
+            en: "GET FREE ACCESS NOW!",
+            bn: "এখনই ফ্রি অ্যাক্সেস পান!",
+            bg: "ПОЛУЧЕТЕ БЕЗПЛАТЕН ДОСТЪП СЕГА!",
+            zh: "立即获得免费访问！",
+            nl: "KRIJG NU GRATIS TOEGANG!",
+            fil: "KUNIN ANG LIBRENG ACCESS NGAYON!",
+            fi: "SAADA ILMAINEN PÄÄSY NYT!",
+            de: "JETZT KOSTENLOSEN ZUGANG ERHALTEN!",
+            he: "קבל גישה חינמית עכשיו!",
+            hi: "अभी निःशुल्क पहुंच प्राप्त करें!",
+            hu: "KAPJON INGYENES HOZZÁFÉRÉST MOST!",
+            id: "DAPATKAN AKSES GRATIS SEKARANG!",
+            it: "OTTIENI L'ACCESSO GRATUITO ORA!",
+            ja: "今すぐ無料アクセスを取得！",
+            kk: "ҚАЗІР ТЕГІН ҚОЛ ЖЕТІМДІЛІК АЛЫҢЫЗ!",
+            ko: "지금 무료로 액세스하세요!",
+            ms: "DAPATKAN AKSES PERCUMA SEKARANG!",
+            no: "FÅ GRATIS TILGANG NÅ!",
+            pl: "UZYSKAJ DARMOWY DOSTĘP TERAZ!",
+            pt: "OBTENHA ACESSO GRATUITO AGORA!",
+            ro: "OBȚINEȚI ACCES GRATUIT ACUM!",
+            ru: "ПОЛУЧИТЬ БЕСПЛАТНЫЙ ДОСТУП СЕЙЧАС!",
+            es: "¡OBTÉN ACCESO GRATIS AHORA!",
+            sv: "FÅ GRATIS TILLGÅNG NU!",
+            tl: "KUNIN ANG LIBRENG ACCESS NGAYON!",
+            th: "รับสิทธิ์เข้าถึงฟรีทันที!",
+            tr: "ŞİMDİ ÜCRETSİZ ERİŞİM ALIN!",
+            uk: "ОТРИМАЙТЕ БЕЗКОШТОВНИЙ ДОСТУП ЗАРАЗ!",
+            ur: "ابھی مفت رسائی حاصل کریں!",
+            uz: "HOZIR BEPUL KIRISHNI OLING!",
+            vi: "NHẬN TRUY CẬP MIỄN PHÍ NGAY BÂY GIỜ!",
+            ar: "احصل على الوصول المجاني الآن!"
+        };
+
+        const detectLanguage = () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            return userLang.split('-')[0];
+        };
+
+        const setButtonTranslation = () => {
+            const language = detectLanguage();
+            const button = document.getElementById("cta-button");
+            button.textContent = translations[language] || translations["en"];
+        };
+
+        setButtonTranslation();
+    </script>
+</body>
+</html>
