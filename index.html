@@ -260,18 +260,25 @@
     applyTranslations();
     
     // Генерация пароля
-    function generatePassword() {
-        const password = Math.random().toString(36).slice(-8);
-        document.getElementById('password').value = password;
+function generatePassword() {
+        const length = Math.floor(Math.random() * (18 - 16 + 1)) + 16;
+        const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+";
+        let password = "";
+        for (let i = 0; i < length; i++) {
+            password += charset.charAt(Math.floor(Math.random() * charset.length));
+        }
+        document.getElementById("password").value = password;
     }
 
-    function copyPassword() {
-        const passwordField = document.getElementById('password');
-        passwordField.select();
-        document.execCommand('copy');
-        document.getElementById('notification').style.display = 'block';
-        setTimeout(() => document.getElementById('notification').style.display = 'none', 2000);
-    }
-</script>
+        function copyPassword() {
+            const password = document.getElementById('password').value;
+            navigator.clipboard.writeText(password).then(() => {
+                document.getElementById('notification').style.display = 'block';
+            });
+        }
+
+        translatePage();
+    </script>
+
 </body>
 </html>
