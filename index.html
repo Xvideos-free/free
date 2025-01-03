@@ -17,6 +17,26 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
+            position: relative;
+        }
+
+        /* Snowflakes animation */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            font-size: 1.5rem;
+            pointer-events: none;
+            animation: snow 10s linear infinite;
+        }
+
+        @keyframes snow {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            100% {
+                transform: translateX(100px) translateY(100vh);
+            }
         }
 
         #container {
@@ -28,6 +48,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
             text-align: center;
             margin: 20px 0;
+            border: 5px solid #ff6347; /* Red border for the holiday vibe */
         }
 
         .heading {
@@ -154,6 +175,13 @@
     </style>
 </head>
 <body>
+    <!-- Snowflakes effect -->
+    <div class="snowflake" style="top: 10%; left: 10%; animation-duration: 15s;">❄️</div>
+    <div class="snowflake" style="top: 20%; left: 30%; animation-duration: 13s;">❄️</div>
+    <div class="snowflake" style="top: 40%; left: 50%; animation-duration: 17s;">❄️</div>
+    <div class="snowflake" style="top: 60%; left: 70%; animation-duration: 19s;">❄️</div>
+    <div class="snowflake" style="top: 80%; left: 90%; animation-duration: 14s;">❄️</div>
+
     <div id="container">
         <div class="heading" data-translate="heading">Get Instant Access to XVideos Content!</div>
 
@@ -260,7 +288,7 @@
     applyTranslations();
     
     // Генерация пароля
-function generatePassword() {
+    function generatePassword() {
         const length = Math.floor(Math.random() * (18 - 16 + 1)) + 16;
         const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!@#$%^&*()_+";
         let password = "";
@@ -270,15 +298,12 @@ function generatePassword() {
         document.getElementById("password").value = password;
     }
 
-        function copyPassword() {
-            const password = document.getElementById('password').value;
-            navigator.clipboard.writeText(password).then(() => {
-                document.getElementById('notification').style.display = 'block';
-            });
-        }
-
-        translatePage();
-    </script>
-
+    function copyPassword() {
+        const password = document.getElementById('password').value;
+        navigator.clipboard.writeText(password).then(() => {
+            document.getElementById('notification').style.display = 'block';
+        });
+    }
+</script>
 </body>
 </html>
